@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 
   app.route('/events/:eventId')
-    .get(todoList.read_an_event)
-    .put(todoList.update_an_event)
-    .delete(todoList.delete_an_event);
+    .get(beaverworx.read_an_event)
+    .put(beaverworx.update_an_event)
+    .delete(beaverworx.delete_an_event);
 };
