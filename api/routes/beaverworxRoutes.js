@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(app) {
-  var todoList = require('../controllers/beaverworxController');
+  var beaverworx = require('../controllers/beaverworxController');
 
   // todoList Routes
   app.route('/events')
