@@ -9,8 +9,8 @@ var EventSchema = new Schema({
     required: 'Please send the name of the event'
   },
   Event_Date: {
-    type: Date,
-    default: Date.now
+    type: String,
+    required: 'Please send the date of the event'
   },
   status: {
     type: [{
