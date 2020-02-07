@@ -3,22 +3,22 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var TaskSchema = new Schema({
+var EventSchema = new Schema({
   name: {
     type: String,
-    required: 'Kindly enter the name of the task'
+    required: 'Kindly enter the name of the event'
   },
-  Created_date: {
+  Event_Date: {
     type: Date,
     default: Date.now
   },
   status: {
     type: [{
       type: String,
-      enum: ['pending', 'ongoing', 'completed']
+      enum: ['upcoming', 'completed']
     }],
-    default: ['pending']
+    default: ['upcoming']
   }
 });
 
-module.exports = mongoose.model('Tasks', TaskSchema);
+module.exports = mongoose.model('Events', EventSchema);
