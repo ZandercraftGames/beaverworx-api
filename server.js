@@ -44,11 +44,6 @@ app.get('/protected', (req, res) => {
 const apiKeys = new Map()
 apiKeys.set('123456789', {
   id: 1,
-  name: 'app1',
+  name: 'BeaverBot-v2',
   secret: 'secret1'
-})
-apiKeys.set('987654321', {
-  id: 2,
-  name: 'app2',
-  secret: 'secret2'
 })
