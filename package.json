@@ -1,0 +1,25 @@
+{
+  "name": "beaverworx-api",
+  "version": "1.0.0",
+  "description": "An API built for serving data related to 2609 Beaverworx.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZandercraftGames/beaverworx-api.git"
+  },
+  "keywords": [
+    "api",
+    "RESTful-api",
+    "frc",
+    "javascript-api"
+  ],
+  "author": "Zander Maitland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZandercraftGames/beaverworx-api/issues"
+  },
+  "homepage": "https://github.com/ZandercraftGames/beaverworx-api#readme"
+}
