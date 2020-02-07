@@ -1,7 +1,6 @@
-'use strict';
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
+'use strict'
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 var EventSchema = new Schema({
   name: {
@@ -19,6 +18,6 @@ var EventSchema = new Schema({
     }],
     default: ['upcoming']
   }
-});
+})
 
-module.exports = mongoose.model('Events', EventSchema);
+module.exports = mongoose.model('Events', EventSchema)

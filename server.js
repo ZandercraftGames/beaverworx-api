@@ -1,3 +1,5 @@
+const apiKeyAuth = require('./middlewares/apiKeyAuth');
+const app = express();
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
@@ -25,4 +27,21 @@ console.log('Beaverworx API server started on: ' + port);
 
 app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
+  });
+
+  function getSecret(keyId, done) {
+    if (!apiKeys.has(keyId)) {
+      done(new Error('Unknown api key'));
+    }
+    const clientApp = apiKeys.get(keyId);
+    done(null, clientApp.secret, {
+      id: clientApp.id,
+      name: clientApp.name
+    });
+  }
+   
+  app.use(apiKeyAuth({ getSecret }));
+   
+  app.get('/protected', (req, res) => {
+    res.send(`Hello ${req.credentials.name}`);
   });
