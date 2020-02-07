@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/ZandercraftGames/beaverworx-api/issues"
   },
-  "homepage": "https://github.com/ZandercraftGames/beaverworx-api#readme"
+  "homepage": "https://github.com/ZandercraftGames/beaverworx-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
