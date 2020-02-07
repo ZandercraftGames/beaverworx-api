@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var EventSchema = new Schema({
   name: {
     type: String,
-    required: 'Kindly enter the name of the event'
+    required: 'Please send the name of the event'
   },
   Event_Date: {
     type: Date,
