@@ -40,3 +40,15 @@ app.use(apiKeyAuth({ getSecret }))
 app.get('/protected', (req, res) => {
   res.send(`Hello ${req.credentials.name}`)
 })
+
+const apiKeys = new Map()
+apiKeys.set('123456789', {
+  id: 1,
+  name: 'app1',
+  secret: 'secret1'
+})
+apiKeys.set('987654321', {
+  id: 2,
+  name: 'app2',
+  secret: 'secret2'
+})
