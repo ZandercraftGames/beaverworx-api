@@ -1,4 +1,4 @@
-const apiKeyAuth = require('./middlewares/apiKeyAuth')
+const apiKeyAuth = require('api-key-auth')
 var express = require('express')
 var app = express()
 var port = process.env.PORT || 3000
