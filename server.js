@@ -40,7 +40,7 @@ function getSecret(keyId, done) {
 
 app.use(apiKeyAuth({ getSecret }));
 
-app.get('/tasks', (req, res) => {
+app.get('/protected', (req, res) => {
   res.send(`Hello ${req.credentials.name}`);
 });
 
