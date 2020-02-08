@@ -1,4 +1,4 @@
-# Ignore sensitive env files
+# Ignore sensitive env configuration files
 *.env
 # Ignore node-modules
 node_modules

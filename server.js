@@ -1,3 +1,4 @@
+require('dotenv').config()
 const apiKeyAuth = require('api-key-auth')
 var express = require('express')
 var app = express()
@@ -8,7 +9,7 @@ var bodyParser = require('body-parser')
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/beaverworxdb')
+mongoose.connect(process.env.MONGO_URI)
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
