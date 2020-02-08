@@ -1,5 +1,5 @@
 require('dotenv').config()
-const apiKeyAuth = require('api-key-auth')
+// const apiKeyAuth = require('api-key-auth')
 const express = require('express')
 const app = express()
 var port = process.env.PORT || 3000
@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-
+/*
 // Map API Keys
 const apiKeys = new Map();
 apiKeys.set(process.env.API_KEY_1, {
@@ -43,7 +43,7 @@ app.use(apiKeyAuth({ getSecret }));
 app.get('/protected', (req, res) => {
   res.send(`Hello ${req.credentials.name}`);
 });
-
+*/
 var routes = require('./api/routes/beaverworxRoutes') // importing route
 routes(app) // register the route
 
