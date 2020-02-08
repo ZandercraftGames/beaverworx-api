@@ -75,6 +75,6 @@ exports.delete_a_task = function (req, res) {
     _id: req.params.taskId
   }, function (err, task) {
     if (err) { res.send(err) }
-    res.json({ message: 'Task successfully deleted' })
+    res.json({ message: 'Task' + req.params.taskId + 'successfully deleted' })
   })
 }

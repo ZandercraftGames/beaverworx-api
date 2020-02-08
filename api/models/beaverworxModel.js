@@ -7,7 +7,15 @@ var EventSchema = new Schema({
     type: String,
     required: 'Please send the name of the event'
   },
-  Event_Date: {
+  description: {
+    type: String,
+    required: 'Please send a description of the event'
+  },
+  location: {
+    type: String,
+    required: 'Please send the location of the event'
+  },
+  date: {
     type: String,
     required: 'Please send the date of the event'
   },
@@ -25,16 +33,27 @@ var TaskSchema = new Schema({
     type: String,
     required: 'Please send the name of the task'
   },
-  Task_Date: {
+  description: {
+    type: String,
+    required: 'Please send the description of the task'
+  },
+  priority: {
+    type: [{
+      type: String,
+      enum: ['low', 'normal','high']
+    }],
+    default: ['normal']
+  },
+  Created_Date: {
     type: Date,
     default: Date.now
   },
   status: {
     type: [{
       type: String,
-      enum: ['upcoming', 'in-progress','completed']
+      enum: ['incomplete', 'in-progress','completed']
     }],
-    default: ['upcoming']
+    default: ['incomplete']
   }
 })
 
