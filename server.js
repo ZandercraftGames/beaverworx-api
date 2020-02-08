@@ -1,7 +1,7 @@
 require('dotenv').config()
 const apiKeyAuth = require('api-key-auth')
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 var port = process.env.PORT || 3000
 var mongoose = require('mongoose')
 var Task = require('./api/models/beaverworxModel') // created model loading here
@@ -25,6 +25,23 @@ apiKeys.set(process.env.API_KEY_2, {
   id: 2,
   name: process.env.API_NAME_2,
   secret: process.env.API_SECRET_2
+});
+
+function getSecret(keyId, done) {
+  if (!apiKeys.has(keyId)) {
+    done(new Error('Unknown api key'));
+  }
+  const clientApp = apiKeys.get(keyId);
+  done(null, clientApp.secret, {
+    id: clientApp.id,
+    name: clientApp.name
+  });
+}
+
+app.use(apiKeyAuth({ getSecret }));
+
+app.get('/tasks', (req, res) => {
+  res.send(`Hello ${req.credentials.name}`);
 });
 
 var routes = require('./api/routes/beaverworxRoutes') // importing route
