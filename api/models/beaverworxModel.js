@@ -20,4 +20,23 @@ var EventSchema = new Schema({
   }
 })
 
+var TaskSchema = new Schema({
+  name: {
+    type: String,
+    required: 'Please send the name of the task'
+  },
+  Task_Date: {
+    type: Date,
+    default: Date.now
+  },
+  status: {
+    type: [{
+      type: String,
+      enum: ['upcoming', 'in-progress','completed']
+    }],
+    default: ['upcoming']
+  }
+})
+
 module.exports = mongoose.model('Events', EventSchema)
+module.exports = mongoose.model('Tasks', TaskSchema)

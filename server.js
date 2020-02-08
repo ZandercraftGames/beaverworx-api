@@ -13,6 +13,19 @@ mongoose.connect('mongodb://localhost/beaverworxdb')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+// Map API Keys
+const apiKeys = new Map();
+apiKeys.set(process.env.API_KEY_1, {
+  id: 1,
+  name: process.env.API_NAME_1,
+  secret: process.env.API_SECRET_1
+});
+apiKeys.set(process.env.API_KEY_2, {
+  id: 2,
+  name: process.env.API_NAME_2,
+  secret: process.env.API_SECRET_2
+});
+
 var routes = require('./api/routes/beaverworxRoutes') // importing route
 routes(app) // register the route
 
@@ -22,28 +35,4 @@ console.log('Beaverworx API server started on: ' + port)
 
 app.use(function (req, res) {
   res.status(404).send({ url: req.originalUrl + ' not found' })
-})
-
-function getSecret (keyId, done) {
-  if (!apiKeys.has(keyId)) {
-    done(new Error('Unknown api key'))
-  }
-  const clientApp = apiKeys.get(keyId)
-  done(null, clientApp.secret, {
-    id: clientApp.id,
-    name: clientApp.name
-  })
-}
-
-app.use(apiKeyAuth({ getSecret }))
-
-app.get('/protected', (req, res) => {
-  res.send(`Hello ${req.credentials.name}`)
-})
-
-const apiKeys = new Map()
-apiKeys.set('123456789', {
-  id: 1,
-  name: 'BeaverBot-v2',
-  secret: 'secret1'
 })
