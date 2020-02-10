@@ -1,0 +1,171 @@
+swagger: '2.0'
+info:
+  description: An API built for serving data related to 2609 Beaverworx.
+  title: beaverworx-api
+  version: v1.0.0
+host: api.beaverworx.ca
+schemes:
+  - http
+basePath: /
+paths:
+  /events:
+    get:
+      summary: Lists all events
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: EventName1
+              description:
+                type: string
+                example: EventDescription1
+              location:
+                type: string
+                example: Canada
+              date:
+                type: string
+                example: 2/8/2020
+              status:
+                type: string
+                enum: ['upcoming', 'completed']
+                example: completed
+    post:
+      summary: Create events
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: EventName1
+              description:
+                type: string
+                example: EventDescription1
+              location:
+                type: string
+                example: Canada
+              date:
+                type: string
+                example: 2/8/2020
+              status:
+                type: string
+                enum: ['upcoming', 'completed']
+                example: completed
+  /events/eventId:
+    put:
+      summary: Update events
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: EventName1
+              description:
+                type: string
+                example: EventDescription1
+              location:
+                type: string
+                example: Canada
+              date:
+                type: string
+                example: 2/8/2020
+              status:
+                type: string
+                enum: ['upcoming', 'completed']
+                example: completed
+    delete:
+      summary: Delete events
+      responses:
+       '200':
+          description: Successful response
+  /tasks:
+    get:
+      summary: Lists all tasks
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: TaskName1
+              description:
+                type: string
+                example: TaskDescription1
+              priority:
+                type: string
+                enum: ['low', 'normal', 'high']
+                example: normal
+              Created_Date:
+                type: string
+                example: 2020-02-08T19:33:08.109Z
+              status:
+                type: string
+                enum: ['incomplete', 'in-progress', 'completed']
+                example: in-progress
+    post:
+      summary: Create tasks
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: TaskName1
+              description:
+                type: string
+                example: TaskDescription1
+              priority:
+                type: string
+                enum: ['low', 'normal', 'high']
+                example: normal
+              Created_Date:
+                type: string
+                example: 2020-02-08T19:33:08.109Z
+              status:
+                type: string
+                enum: ['incomplete', 'in-progress', 'completed']
+                example: in-progress
+  /tasks/taskId:
+    put:
+      summary: Update tasks
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: TaskName1
+              description:
+                type: string
+                example: TaskDescription1
+              priority:
+                type: string
+                enum: ['low', 'normal', 'high']
+                example: normal
+              Created_Date:
+                type: string
+                example: 2020-02-08T19:33:08.109Z
+              status:
+                type: string
+                enum: ['incomplete', 'in-progress', 'completed']
+                example: in-progress
+    delete:
+      summary: Delete tasks
+      responses:
+       '200':
+          description: Successful response
