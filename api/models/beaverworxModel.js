@@ -40,7 +40,7 @@ var TaskSchema = new Schema({
   priority: {
     type: [{
       type: String,
-      enum: ['low', 'normal','high']
+      enum: ['low', 'normal', 'high']
     }],
     default: ['normal']
   },
@@ -51,7 +51,7 @@ var TaskSchema = new Schema({
   status: {
     type: [{
       type: String,
-      enum: ['incomplete', 'in-progress','completed']
+      enum: ['incomplete', 'in-progress', 'completed']
     }],
     default: ['incomplete']
   }
