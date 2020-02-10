@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An API built for serving data related to 2609 Beaverworx.",
   "main": "index.js",
+  "publishConfig": { "registry": "http://npm.pkg.github.com/" },
   "scripts": {
     "test": "standard && nodemon server.js",
     "start": "nodemon server.js"
