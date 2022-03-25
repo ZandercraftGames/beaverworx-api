@@ -1,4 +1,6 @@
 # beaverworx-api
+> NOTE: This API is incomplete and very likely contains security vulnerabilities. It was a project that I started on, but it is currently unmaintained. Use the code from this repository at your own risk. By using it, you assume all dangers and risks pertaining to it's use.
+
 An API built for serving data related to 2609 Beaverworx.
 
 ### Note:
